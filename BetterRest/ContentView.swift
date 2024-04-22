@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var slipAmount = 8.0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Stepper("\(slipAmount.formatted()) hours", value: $slipAmount, in: 4 ... 12, step: 0.25)
     }
 }
 
